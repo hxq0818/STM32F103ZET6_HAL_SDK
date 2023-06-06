@@ -1,0 +1,17 @@
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\lv_bidi.c
+.\obj\lv_bidi.o: D:\Installation_Path\Keil\Core\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\lv_bidi.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\../lv_conf_internal.h
+.\obj\lv_bidi.o: D:\Installation_Path\Keil\Core\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\../lv_conf_kconfig.h
+.\obj\lv_bidi.o: .\Middlewares\GUI\LVGL\lvgl\examples\porting\../../lv_conf.h
+.\obj\lv_bidi.o: D:\Installation_Path\Keil\Core\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\lv_txt.h
+.\obj\lv_bidi.o: D:\Installation_Path\Keil\Core\ARM\ARMCC\Bin\..\include\stdarg.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\lv_area.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\../font/lv_font.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\../font/lv_symbol_def.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\lv_printf.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\lv_types.h
+.\obj\lv_bidi.o: Middlewares\GUI\LVGL\lvgl\src\misc\../misc/lv_mem.h
+.\obj\lv_bidi.o: D:\Installation_Path\Keil\Core\ARM\ARMCC\Bin\..\include\string.h
