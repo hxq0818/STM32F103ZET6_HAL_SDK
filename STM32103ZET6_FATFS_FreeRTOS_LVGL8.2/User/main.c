@@ -61,7 +61,7 @@ int main()
 	EN25QXX_Init();				//初始化EN25Q128	
 	FSMC_SRAM_Init();  
 	my_mem_init(SRAMIN);		//初始化内部内存池
-	my_mem_init(SRAMEX);		//初始化内部内存池
+//	my_mem_init(SRAMEX);		//初始化内部内存池
 	
 	FRONT_COLOR=RED;//设置字体为红色 
 	LCD_ShowString(10,10,tftlcd_data.width,tftlcd_data.height,16,"PRECHIN STM32F1");	
@@ -107,6 +107,7 @@ int main()
 	lv_init();
 	lv_port_disp_init();
 	lv_port_indev_init();
+	lv_bmp_init();
 	
 	printf("*********FATFS*********\r\n");
 	FF_FILE = (FIL*)mymalloc(SRAMIN,sizeof(FIL));	//分配内存	
