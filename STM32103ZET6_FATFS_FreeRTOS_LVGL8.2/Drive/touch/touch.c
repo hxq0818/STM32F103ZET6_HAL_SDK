@@ -6,7 +6,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "gt5663.h"
-
+#include "st7789v.h"
 
 _m_tp_dev tp_dev=
 {

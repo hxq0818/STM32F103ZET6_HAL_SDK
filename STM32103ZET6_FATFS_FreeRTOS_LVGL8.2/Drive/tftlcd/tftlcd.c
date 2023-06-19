@@ -3,7 +3,7 @@
 #include "font.h" 
 #include "usart.h"	 
 #include "SysTick.h"	   
-
+#include "st7789v.h"
 
 //LCD的画笔颜色和背景色	   
 u16 FRONT_COLOR=BLACK;	//画笔颜色

@@ -33,7 +33,7 @@ I (.\Public\SysTick.h)(0x64832DEA)
 I (.\Drive\led\led.h)(0x5DBBE45A)
 I (.\Public\usart.h)(0x5DBD81C0)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
-I (.\Drive\tftlcd\tftlcd.h)(0x61A426D8)
+I (.\Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (.\Drive\key\key.h)(0x5DD8E954)
 I (.\Malloc\malloc.h)(0x64818349)
 I (.\Drive\sd_sdio\sd_sdio.h)(0x5DBBF54E)
@@ -974,8 +974,8 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-F (.\Drive\tftlcd\tftlcd.c)(0x64832DA9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\tftlcd.o --omf_browse .\obj\tftlcd.crf --depend .\obj\tftlcd.d)
-I (Drive\tftlcd\tftlcd.h)(0x61A426D8)
+F (.\Drive\tftlcd\tftlcd.c)(0x649025A2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\tftlcd.o --omf_browse .\obj\tftlcd.crf --depend .\obj\tftlcd.d)
+I (Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (.\Public\system.h)(0x5DBBF702)
 I (.\User\stm32f10x.h)(0x4D783CB4)
 I (.\Libraries\CMSIS\core_cm3.h)(0x4D523B58)
@@ -1010,6 +1010,7 @@ I (Drive\tftlcd\font.h)(0x64832D48)
 I (.\Public\usart.h)(0x5DBD81C0)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (.\Public\SysTick.h)(0x64832DEA)
+I (.\Drive\lcd\st7789v.h)(0x645DB7BA)
 F (.\Drive\24Cxx\24cxx.c)(0x58282618)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\24cxx.o --omf_browse .\obj\24cxx.crf --depend .\obj\24cxx.d)
 I (Drive\24Cxx\24cxx.h)(0x57D90D0E)
 I (.\Public\system.h)(0x5DBBF702)
@@ -1139,14 +1140,14 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
 I (Drive\touch\touch.h)(0x5DCD1036)
-I (.\Drive\tftlcd\tftlcd.h)(0x61A426D8)
+I (.\Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (Drive\touch\ctiic.h)(0x5DBF9C7E)
 I (.\Public\usart.h)(0x5DBD81C0)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (.\Public\SysTick.h)(0x64832DEA)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\string.h)(0x5CEB79E2)
 I (.\Drive\led\led.h)(0x5DBBE45A)
-F (.\Drive\touch\touch.c)(0x61A0780C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\touch.o --omf_browse .\obj\touch.crf --depend .\obj\touch.d)
+F (.\Drive\touch\touch.c)(0x64902577)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\touch.o --omf_browse .\obj\touch.crf --depend .\obj\touch.d)
 I (Drive\touch\touch.h)(0x5DCD1036)
 I (.\Public\system.h)(0x5DBBF702)
 I (.\User\stm32f10x.h)(0x4D783CB4)
@@ -1177,7 +1178,7 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-I (.\Drive\tftlcd\tftlcd.h)(0x61A426D8)
+I (.\Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (.\Drive\24Cxx\24cxx.h)(0x57D90D0E)
 I (.\Drive\iic\iic.h)(0x5DBBEEC6)
 I (.\Public\SysTick.h)(0x64832DEA)
@@ -1186,6 +1187,7 @@ I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\math.h)(0x5CEB79D6)
 I (Drive\touch\gt5663.h)(0x5DBF9DC4)
+I (.\Drive\lcd\st7789v.h)(0x645DB7BA)
 F (.\Drive\sram\sram.c)(0x58D626D0)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\sram.o --omf_browse .\obj\sram.crf --depend .\obj\sram.d)
 I (Drive\sram\sram.h)(0x57EB6D9E)
 I (.\Public\system.h)(0x5DBBF702)
@@ -1632,7 +1634,7 @@ I (.\Middlewares\Fatfs\src\ff.h)(0x577640E8)
 I (.\Middlewares\Fatfs\src\integer.h)(0x577640E8)
 I (.\Middlewares\Fatfs\src\ffconf.h)(0x5BADA58C)
 I (.\Drive\flash\flash.h)(0x5DCD0D5A)
-I (.\Drive\tftlcd\tftlcd.h)(0x61A426D8)
+I (.\Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\string.h)(0x5CEB79E2)
 F (.\Font\font_update.c)(0x648314AC)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\User -I .\Libraries\CMSIS -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Public -I .\Malloc -I .\Font -I .\Drive\flash -I .\Drive\key -I .\Drive\led -I .\Drive\sd_sdio -I .\Drive\spi -I .\Drive\tftlcd -I .\Middlewares\Fatfs\fatfs_app -I .\Middlewares\Fatfs\src -I .\Drive\24Cxx -I .\Drive\iic -I .\Drive\touch -I .\Drive\sram -I .\Drive\lcd -I .\Middlewares\RTOS\FreeRTOS\freertos\include -I .\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3 -I .\Middlewares\RTOS\FreeRTOS_APP -I .\Drive\time -I .\Middlewares\GUI\LVGL -I .\Middlewares\GUI\LVGL\lvgl -I .\Middlewares\GUI\LVGL\lvgl\src -I .\Middlewares\GUI\LVGL\lvgl\examples\porting -I .\Middlewares\GUI\LVGL_APP --diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295-I.\RTE\_Target_1-ID:\Installation_Path\Keil\Pack\Keil\STM32F1xx_DFP\1.0.5\Device\Include-ID:\Installation_Path\Keil\Core\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\obj\font_update.o --omf_browse .\obj\font_update.crf --depend .\obj\font_update.d)
 I (Font\font_update.h)(0x5BC04B24)
@@ -1669,7 +1671,7 @@ I (.\Middlewares\Fatfs\src\ff.h)(0x577640E8)
 I (.\Middlewares\Fatfs\src\integer.h)(0x577640E8)
 I (.\Middlewares\Fatfs\src\ffconf.h)(0x5BADA58C)
 I (.\Drive\flash\flash.h)(0x5DCD0D5A)
-I (.\Drive\tftlcd\tftlcd.h)(0x61A426D8)
+I (.\Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\string.h)(0x5CEB79E2)
 I (.\Malloc\malloc.h)(0x64818349)
 I (.\Public\SysTick.h)(0x64832DEA)
@@ -2460,7 +2462,7 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x4D783BB4)
-I (.\Drive\tftlcd\tftlcd.h)(0x61A426D8)
+I (.\Drive\tftlcd\tftlcd.h)(0x649024F0)
 I (.\Public\usart.h)(0x5DBD81C0)
 I (D:\Installation_Path\Keil\Core\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (.\Drive\lcd\cst816t.h)(0x6459B06F)
