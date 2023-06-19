@@ -1,4 +1,3 @@
-*.crf
-*.d
-*.o
-/Obj/
+Obj/*.crf
+Obj/*.d
+Obj/*.o
