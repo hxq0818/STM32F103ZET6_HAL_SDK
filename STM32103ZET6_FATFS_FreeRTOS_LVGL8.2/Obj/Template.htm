@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Obj\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Obj\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Jun 19 16:56:29 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Jun 19 17:22:25 2023
 <BR><P>
 <H3>Maximum Stack Usage =       1096 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -9521,8 +9521,8 @@ Global Symbols
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_colorwheel_event
 <LI><a href="#[323]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;double_click_reset
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_timer
-<LI><a href="#[62d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_timer_time_remaining
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_arc_event
+<LI><a href="#[62d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_timer_time_remaining
 </UL>
 
 <P><STRONG><a name="[1f7]"></a>lv_tick_get</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, lv_hal_tick.o(i.lv_tick_get))
@@ -9541,9 +9541,9 @@ Global Symbols
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_timer
 <LI><a href="#[4ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_timer_ready
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_timer_create
-<LI><a href="#[62c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_timer_exec
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_arc_event
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_arc_constructor
+<LI><a href="#[62c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_timer_exec
 </UL>
 
 <P><STRONG><a name="[183]"></a>lv_tick_inc</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lv_hal_tick.o(i.lv_tick_inc))
@@ -9612,7 +9612,8 @@ Global Symbols
 <P><STRONG><a name="[62e]"></a>lv_tlsf_add_pool</STRONG> (Thumb, 142 bytes, Stack size 32 bytes, lv_tlsf.o(i.lv_tlsf_add_pool))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = lv_tlsf_add_pool &rArr; block_insert &rArr; insert_free_block &rArr; align_ptr
 </UL>
-<BR>[Calls]<UL><LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;offset_to_block
+<BR>[Calls]<UL><LI><a href="#[62f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_pool_overhead
+<LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;offset_to_block
 <LI><a href="#[290]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_set_used
 <LI><a href="#[29d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_set_size
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_set_prev_used
@@ -9621,7 +9622,6 @@ Global Symbols
 <LI><a href="#[281]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_link_next
 <LI><a href="#[283]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_insert
 <LI><a href="#[630]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;align_down
-<LI><a href="#[62f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_pool_overhead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[543]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_create_with_pool
 </UL>
@@ -9637,9 +9637,9 @@ Global Symbols
 <P><STRONG><a name="[543]"></a>lv_tlsf_create_with_pool</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, lv_tlsf.o(i.lv_tlsf_create_with_pool))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = lv_tlsf_create_with_pool &rArr; lv_tlsf_add_pool &rArr; block_insert &rArr; insert_free_block &rArr; align_ptr
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_add_pool
-<LI><a href="#[633]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_size
+<BR>[Calls]<UL><LI><a href="#[633]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_size
 <LI><a href="#[631]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_create
+<LI><a href="#[62e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_tlsf_add_pool
 </UL>
 <BR>[Called By]<UL><LI><a href="#[518]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_mem_init
 </UL>
