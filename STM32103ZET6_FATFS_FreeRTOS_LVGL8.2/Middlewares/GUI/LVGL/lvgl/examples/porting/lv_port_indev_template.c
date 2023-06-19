@@ -14,6 +14,8 @@
 
 //添加自己的触摸文件
 #include "touch.h"
+#include "usart.h"
+#include "cst816t.h"
 /*********************
  *      DEFINES
  *********************/
@@ -204,12 +206,28 @@ static void touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 //    /*Set the last pressed coordinates*/
 //    data->point.x = last_x;
 //    data->point.y = last_y;
-			static uint16_t last_x = 0;
+//			static uint16_t last_x = 0;
+//		static uint16_t last_y = 0;
+//		if(tp_dev.sta&TP_PRES_DOWN)//触摸按下了
+//		{
+//			last_x = tp_dev.x[0];
+//			last_y = tp_dev.y[0];
+//			data->point.x = last_x;
+//			data->point.y = last_y;
+//			data->state = LV_INDEV_STATE_PR;
+//		}else{
+//			data->point.x = last_x;
+//			data->point.y = last_y;
+//			data->state = LV_INDEV_STATE_REL;
+//		}
+
+		static uint16_t last_x = 0;
 		static uint16_t last_y = 0;
-		if(tp_dev.sta&TP_PRES_DOWN)//触摸按下了
+
+		if(State!=0)//触摸按下了
 		{
-			last_x = tp_dev.x[0];
-			last_y = tp_dev.y[0];
+			last_x = X_Axis;
+			last_y = Y_Axis;
 			data->point.x = last_x;
 			data->point.y = last_y;
 			data->state = LV_INDEV_STATE_PR;
@@ -218,6 +236,7 @@ static void touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 			data->point.y = last_y;
 			data->state = LV_INDEV_STATE_REL;
 		}
+
 }
 
 /*Return true is the touchpad is pressed*/

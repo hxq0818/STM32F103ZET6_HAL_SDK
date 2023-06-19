@@ -7,8 +7,8 @@
 /* storage control modules to the FatFs module with a defined API.       */
 /*-----------------------------------------------------------------------*/
 #include "diskio.h"			/* FatFs lower layer API */
-#include "drive_sdio_sdcard.h"
-#include "drive_flash.h"
+#include "sd_sdio.h"
+#include "flash.h"
 #include "malloc.h"	
 
 
@@ -155,11 +155,11 @@ DRESULT res;
 		        res = RES_OK;
 		        break;	 
 		    case GET_BLOCK_SIZE:
-				*(WORD*)buff = SDCardInfo.LogBlockSize;
+				*(WORD*)buff = SDCardInfo.CardBlockSize;
 		        res = RES_OK;
 		        break;	 
 		    case GET_SECTOR_COUNT:
-		        *(DWORD*)buff = SDCardInfo.LogBlockNbr;
+		        *(DWORD*)buff = SDCardInfo.CardCapacity/512;
 		        res = RES_OK;
 		        break;
 		    default:

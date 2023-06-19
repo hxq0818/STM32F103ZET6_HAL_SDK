@@ -14,14 +14,15 @@
 
 //添加自己的LCD文件
 
-#include "tftlcd.h"
+//#include "tftlcd.h"
+#include "st7789v.h"
 
 /*********************
  *      DEFINES
  *********************/
 /* Maximal horizontal and vertical resolution to support by the library.*/
-#define LV_HOR_RES_MAX          (320)  	//320
-#define LV_VER_RES_MAX          (480)  //480
+#define LV_HOR_RES_MAX          (240)  	//320
+#define LV_VER_RES_MAX          (280)  //480
 /**********************
  *      TYPEDEFS
  **********************/
@@ -117,8 +118,8 @@ void lv_port_disp_init(void)
     /*Set up the functions to access to your display*/
 
     /*Set the resolution of the display*/
-    disp_drv.hor_res = 320;
-    disp_drv.ver_res = 480;
+    disp_drv.hor_res = 240;
+    disp_drv.ver_res = 280;
 
     /*Used to copy the buffer's content to the display*/
     disp_drv.flush_cb = disp_flush;
@@ -146,6 +147,7 @@ void lv_port_disp_init(void)
 static void disp_init(void)
 {
     /*You code here*/
+	ST7789V_LcdInit();
 }
 
 /*Flush the content of the internal buffer the specific area on the display
@@ -164,8 +166,11 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 //            color_p++;
 //        }
 //    }
-		LCD_Color_Fill(area->x1,area->y1,area->x2,area->y2,(u16*)color_p);
-    /*IMPORTANT!!!
+	
+//		LCD_Color_Fill(area->x1,area->y1,area->x2,area->y2,(u16*)color_p);
+    
+	ST7789V_FillLcdScreen(area->x1,area->y1,area->x2+1,area->y2+1,(uint16_t*)color_p,0);
+	/*IMPORTANT!!!
      *Inform the graphics library that you are ready with the flushing*/
     lv_disp_flush_ready(disp_drv);
 }

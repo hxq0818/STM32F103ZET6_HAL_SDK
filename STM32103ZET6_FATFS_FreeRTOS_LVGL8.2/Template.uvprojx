@@ -18,7 +18,7 @@
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32F1xx_DFP.1.0.5</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x20000000,0x10000) IROM(0x08000000,0x80000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IROM(0x08000000,0x80000) IRAM(0x20000000,0x10000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
           <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000 -FP0($$Device:STM32F103ZE$Flash\STM32F10x_512.FLM))</FlashDriverDll>
@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <DriverSelection>-1</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -336,9 +336,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls>--diag_suppress=68  --diag_suppress=111  --diag_suppress=188  --diag_suppress=223  --diag_suppress=546  --diag_suppress=1295</MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F103xE</Define>
+              <Define>USE_STDPERIPH_DRIVER,STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Libraries\CMSIS;.\Libraries\STM32F1xx_HAL_Driver\Inc;.\User;.\Public;.\Malloc;.\APP\sd;.\Fatfs\src;.\Fatfs\fatfs_app;.\Font;.\Middlewares\RTOS\FreeRTOS\freertos\include;.\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3;.\Middlewares\RTOS\FreeRTOS_APP;.\Middlewares\GUI\LVGL;.\Middlewares\GUI\LVGL\lvgl;.\Middlewares\GUI\LVGL\lvgl\src;.\Middlewares\GUI\LVGL\lvgl\examples\porting;.\Middlewares\GUI\LVGL_APP;.\Middlewares\Fatfs\src;.\Middlewares\Fatfs\fatfs_app;.\BSP_Drive\24Cxx;.\BSP_Drive\flash;.\BSP_Drive\iic;.\BSP_Drive\key;.\BSP_Drive\led;.\BSP_Drive\sd;.\BSP_Drive\spi;.\BSP_Drive\sram;.\BSP_Drive\tftlcd;.\BSP_Drive\time;.\BSP_Drive\touch;.\BSP_Drive\lcd</IncludePath>
+              <IncludePath>.\User;.\Libraries\CMSIS;.\Libraries\STM32F10x_StdPeriph_Driver\inc;.\Public;.\Malloc;.\Font;.\Drive\flash;.\Drive\key;.\Drive\led;.\Drive\sd_sdio;.\Drive\spi;.\Drive\tftlcd;.\Middlewares\Fatfs\fatfs_app;.\Middlewares\Fatfs\src;.\Drive\24Cxx;.\Drive\iic;.\Drive\touch;.\Drive\sram;.\Drive\lcd;.\Middlewares\RTOS\FreeRTOS\freertos\include;.\Middlewares\RTOS\FreeRTOS\freertos\portable\RVDS\ARM_CM3;.\Middlewares\RTOS\FreeRTOS_APP;.\Drive\time;.\Middlewares\GUI\LVGL;.\Middlewares\GUI\LVGL\lvgl;.\Middlewares\GUI\LVGL\lvgl\src;.\Middlewares\GUI\LVGL\lvgl\examples\porting;.\Middlewares\GUI\LVGL_APP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,14 +388,9 @@
               <FilePath>.\User\main.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_it.c</FileName>
+              <FileName>stm32f10x_it.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\User\stm32f1xx_it.c</FilePath>
-            </File>
-            <File>
-              <FileName>system_stm32f1xx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\system_stm32f1xx.c</FilePath>
+              <FilePath>.\User\stm32f10x_it.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -403,159 +398,109 @@
           <GroupName>Startup</GroupName>
           <Files>
             <File>
-              <FileName>startup_stm32f103xe.s</FileName>
+              <FileName>startup_stm32f10x_hd.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\Libraries\CMSIS\startup_stm32f103xe.s</FilePath>
+              <FilePath>.\Libraries\CMSIS\startup_stm32f10x_hd.s</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>HAL_Driver</GroupName>
+          <GroupName>StdPeriph_Driver</GroupName>
           <Files>
             <File>
-              <FileName>stm32f1xx_hal.c</FileName>
+              <FileName>stm32f10x_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_gpio.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_cortex.c</FileName>
+              <FileName>stm32f10x_rcc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rcc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_gpio.c</FileName>
+              <FileName>misc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\misc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_gpio_ex.c</FileName>
+              <FileName>stm32f10x_exti.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_exti.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_pwr.c</FileName>
+              <FileName>stm32f10x_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_tim.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_rcc.c</FileName>
+              <FileName>stm32f10x_usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_usart.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_rcc_ex.c</FileName>
+              <FileName>stm32f10x_iwdg.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_iwdg.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_exti.c</FileName>
+              <FileName>stm32f10x_wwdg.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_wwdg.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_tim.c</FileName>
+              <FileName>stm32f10x_bkp.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_bkp.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_tim_ex.c</FileName>
+              <FileName>stm32f10x_pwr.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_pwr.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_dma.c</FileName>
+              <FileName>stm32f10x_adc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_adc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_usart.c</FileName>
+              <FileName>stm32f10x_dac.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_usart.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dac.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_uart.c</FileName>
+              <FileName>stm32f10x_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_dma.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_iwdg.c</FileName>
+              <FileName>stm32f10x_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_iwdg.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_rtc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_wwdg.c</FileName>
+              <FileName>stm32f10x_can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_wwdg.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_can.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_adc.c</FileName>
+              <FileName>stm32f10x_fsmc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_fsmc.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_adc_ex.c</FileName>
+              <FileName>stm32f10x_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc_ex.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_spi.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_dac.c</FileName>
+              <FileName>stm32f10x_flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dac.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_flash.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f1xx_hal_dac_ex.c</FileName>
+              <FileName>stm32f10x_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dac_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_rtc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rtc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_rtc_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rtc_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_can.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_ll_fsmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_fsmc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_sram.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_sram.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_flash_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_sd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_sd.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_ll_sdmmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Libraries\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_sdmmc.c</FilePath>
+              <FilePath>.\Libraries\STM32F10x_StdPeriph_Driver\src\stm32f10x_sdio.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -563,24 +508,14 @@
           <GroupName>CMSIS</GroupName>
           <Files>
             <File>
-              <FileName>cmsis_armcc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\CMSIS\cmsis_armcc.h</FilePath>
+              <FileName>system_stm32f10x.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\CMSIS\system_stm32f10x.c</FilePath>
             </File>
             <File>
-              <FileName>cmsis_armclang.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\CMSIS\cmsis_armclang.h</FilePath>
-            </File>
-            <File>
-              <FileName>cmsis_compiler.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\CMSIS\cmsis_compiler.h</FilePath>
-            </File>
-            <File>
-              <FileName>core_cm3.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Libraries\CMSIS\core_cm3.h</FilePath>
+              <FileName>core_cm3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Libraries\CMSIS\core_cm3.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -588,69 +523,84 @@
           <GroupName>Drive</GroupName>
           <Files>
             <File>
-              <FileName>drive_24cxx.c</FileName>
+              <FileName>flash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\24Cxx\drive_24cxx.c</FilePath>
+              <FilePath>.\Drive\flash\flash.c</FilePath>
             </File>
             <File>
-              <FileName>drive_flash.c</FileName>
+              <FileName>key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\flash\drive_flash.c</FilePath>
+              <FilePath>.\Drive\key\key.c</FilePath>
             </File>
             <File>
-              <FileName>drive_iic.c</FileName>
+              <FileName>led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\iic\drive_iic.c</FilePath>
+              <FilePath>.\Drive\led\led.c</FilePath>
             </File>
             <File>
-              <FileName>drive_key.c</FileName>
+              <FileName>sd_sdio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\key\drive_key.c</FilePath>
+              <FilePath>.\Drive\sd_sdio\sd_sdio.c</FilePath>
             </File>
             <File>
-              <FileName>drive_led.c</FileName>
+              <FileName>spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\led\drive_led.c</FilePath>
-            </File>
-            <File>
-              <FileName>drive_sdio_sdcard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\sd\drive_sdio_sdcard.c</FilePath>
-            </File>
-            <File>
-              <FileName>drive_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\spi\drive_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>drive_sram.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\sram\drive_sram.c</FilePath>
+              <FilePath>.\Drive\spi\spi.c</FilePath>
             </File>
             <File>
               <FileName>tftlcd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\tftlcd\tftlcd.c</FilePath>
+              <FilePath>.\Drive\tftlcd\tftlcd.c</FilePath>
             </File>
             <File>
-              <FileName>drive_time.c</FileName>
+              <FileName>24cxx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\time\drive_time.c</FilePath>
+              <FilePath>.\Drive\24Cxx\24cxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\iic\iic.c</FilePath>
             </File>
             <File>
               <FileName>ctiic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\touch\ctiic.c</FilePath>
+              <FilePath>.\Drive\touch\ctiic.c</FilePath>
             </File>
             <File>
               <FileName>gt5663.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\touch\gt5663.c</FilePath>
+              <FilePath>.\Drive\touch\gt5663.c</FilePath>
             </File>
             <File>
               <FileName>touch.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\BSP_Drive\touch\touch.c</FilePath>
+              <FilePath>.\Drive\touch\touch.c</FilePath>
+            </File>
+            <File>
+              <FileName>sram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\sram\sram.c</FilePath>
+            </File>
+            <File>
+              <FileName>time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\time\time.c</FilePath>
+            </File>
+            <File>
+              <FileName>cst816t.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\lcd\cst816t.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\lcd\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>st7789v.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drive\lcd\st7789v.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -703,9 +653,9 @@
           <GroupName>Fatfs</GroupName>
           <Files>
             <File>
-              <FileName>fatfs_app.c</FileName>
+              <FileName>diskio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Middlewares\Fatfs\fatfs_app\fatfs_app.c</FilePath>
+              <FilePath>.\Middlewares\Fatfs\src\diskio.c</FilePath>
             </File>
             <File>
               <FileName>ff.c</FileName>
@@ -713,9 +663,9 @@
               <FilePath>.\Middlewares\Fatfs\src\ff.c</FilePath>
             </File>
             <File>
-              <FileName>diskio.c</FileName>
+              <FileName>fatfs_app.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Middlewares\Fatfs\src\diskio.c</FilePath>
+              <FilePath>.\Middlewares\Fatfs\fatfs_app\fatfs_app.c</FilePath>
             </File>
             <File>
               <FileName>mycc936.c</FileName>
@@ -788,14 +738,14 @@
           <GroupName>LVGL_ports</GroupName>
           <Files>
             <File>
-              <FileName>lv_port_disp_template.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\examples\porting\lv_port_disp_template.c</FilePath>
-            </File>
-            <File>
               <FileName>lv_port_indev_template.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\examples\porting\lv_port_indev_template.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_port_disp_template.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Middlewares\GUI\LVGL\lvgl\examples\porting\lv_port_disp_template.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -987,6 +937,16 @@
               <FileType>1</FileType>
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\draw\sw\lv_draw_sw_rect.c</FilePath>
             </File>
+            <File>
+              <FileName>lv_bmp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\bmp\lv_bmp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_fs_fatfs.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\fsdrv\lv_fs_fatfs.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1006,66 +966,6 @@
               <FileName>lv_grid.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\layouts\grid\lv_grid.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_bmp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\bmp\lv_bmp.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_ffmpeg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\ffmpeg\lv_ffmpeg.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_freetype.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\freetype\lv_freetype.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_fs_fatfs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\fsdrv\lv_fs_fatfs.c</FilePath>
-            </File>
-            <File>
-              <FileName>gifdec.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\gif\gifdec.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_gif.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\gif\lv_gif.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_png.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\png\lv_png.c</FilePath>
-            </File>
-            <File>
-              <FileName>lodepng.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\png\lodepng.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_qrcode.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\qrcode\lv_qrcode.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_rlottie.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\rlottie\lv_rlottie.c</FilePath>
-            </File>
-            <File>
-              <FileName>tjpgd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\sjpg\tjpgd.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_sjpg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\libs\sjpg\lv_sjpg.c</FilePath>
             </File>
             <File>
               <FileName>lv_fragment.c</FileName>
@@ -1153,14 +1053,14 @@
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\led\lv_led.c</FilePath>
             </File>
             <File>
-              <FileName>lv_list.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\list\lv_list.c</FilePath>
-            </File>
-            <File>
               <FileName>lv_menu.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\menu\lv_menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\list\lv_list.c</FilePath>
             </File>
             <File>
               <FileName>lv_meter.c</FileName>
@@ -1193,14 +1093,14 @@
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\tabview\lv_tabview.c</FilePath>
             </File>
             <File>
-              <FileName>lv_win.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\win\lv_win.c</FilePath>
-            </File>
-            <File>
               <FileName>lv_tileview.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\tileview\lv_tileview.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_win.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Middlewares\GUI\LVGL\lvgl\src\extra\widgets\win\lv_win.c</FilePath>
             </File>
           </Files>
         </Group>

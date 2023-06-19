@@ -1,6 +1,6 @@
 #include "font_update.h"
 #include "ff.h"	  
-#include "drive_flash.h"  
+#include "flash.h"  
 #include "tftlcd.h"  
 #include "string.h"
 #include "malloc.h"
@@ -75,9 +75,9 @@ u8 updata_fontx(u16 x,u16 y,u8 size,u8 *fxpath,u8 fx)
 	u16 bread;
 	u32 offx=0;
 	u8 rval=0;	     
-	fftemp=(FIL*)mymalloc(SRAMEX,sizeof(FIL));	//分配内存	
+	fftemp=(FIL*)mymalloc(SRAMIN,sizeof(FIL));	//分配内存	
 	if(fftemp==NULL)rval=1;
-	tempbuf=mymalloc(SRAMEX,4096);				//分配4096个字节空间
+	tempbuf=mymalloc(SRAMIN,4096);				//分配4096个字节空间
 	if(tempbuf==NULL)rval=1;
  	res=f_open(fftemp,(const TCHAR*)fxpath,FA_READ); 
  	if(res)rval=2;//打开文件失败  
@@ -123,8 +123,8 @@ u8 updata_fontx(u16 x,u16 y,u8 size,u8 *fxpath,u8 fx)
 	 	} 	
 		f_close(fftemp);		
 	}			 
-	myfree(SRAMEX,fftemp);	//释放内存
-	myfree(SRAMEX,tempbuf);	//释放内存
+	myfree(SRAMIN,fftemp);	//释放内存
+	myfree(SRAMIN,tempbuf);	//释放内存
 	return res;
 } 
 //更新字体文件,UNIGBK,GBK12,GBK16,GBK24,GBK32一起更新
@@ -139,20 +139,20 @@ u8 update_font(u16 x,u16 y,u8 size,u8* src)
 	u8 *pname;
 	u32 *buf;
 	u8 res=0;		   
-// 	u16 i,j;
-	u16 i;
+ 	u16 i;
+//	uint16_t j;
 	FIL *fftemp;
 	u8 rval=0; 
 	res=0XFF;		
 	ftinfo.fontok=0XFF;
-	pname=mymalloc(SRAMEX,100);	//申请100字节内存  
-	buf=mymalloc(SRAMEX,4096);	//申请4K字节内存  
-	fftemp=(FIL*)mymalloc(SRAMEX,sizeof(FIL));	//分配内存	
+	pname=mymalloc(SRAMIN,100);	//申请100字节内存  
+	buf=mymalloc(SRAMIN,4096);	//申请4K字节内存  
+	fftemp=(FIL*)mymalloc(SRAMIN,sizeof(FIL));	//分配内存	
 	if(buf==NULL||pname==NULL||fftemp==NULL)
 	{
-		myfree(SRAMEX,fftemp);
-		myfree(SRAMEX,pname);
-		myfree(SRAMEX,buf);
+		myfree(SRAMIN,fftemp);
+		myfree(SRAMIN,pname);
+		myfree(SRAMIN,buf);
 		return 5;		//内存申请失败
 	}
 	for(i=0;i<4;i++)	//先查找文件UNIGBK,GBK12,GBK16,GBK24,GBK32是否正常 
@@ -166,7 +166,7 @@ u8 update_font(u16 x,u16 y,u8 size,u8* src)
 			break;		//出错了,直接退出
 		}
 	} 
-	myfree(SRAMEX,fftemp);	//释放内存
+	myfree(SRAMIN,fftemp);	//释放内存
 	if(rval==0)				//字库文件都存在.
 	{  
 //		LCD_ShowString(x,y,240,320,size,"Erasing sectors... ");//提示正在擦除扇区	
@@ -188,8 +188,8 @@ u8 update_font(u16 x,u16 y,u8 size,u8* src)
 			res=updata_fontx(x+20*size/2,y,size,pname,i);	//更新字库
 			if(res)
 			{
-				myfree(SRAMEX,buf);
-				myfree(SRAMEX,pname);
+				myfree(SRAMIN,buf);
+				myfree(SRAMIN,pname);
 				return 1+i;
 			} 
 		} 
@@ -197,8 +197,8 @@ u8 update_font(u16 x,u16 y,u8 size,u8* src)
 		ftinfo.fontok=0X55;
 		EN25QXX_Write((u8*)&ftinfo,FONTINFOADDR,sizeof(ftinfo));	//保存字库信息
 	}
-	myfree(SRAMEX,pname);//释放内存 
-	myfree(SRAMEX,buf);
+	myfree(SRAMIN,pname);//释放内存 
+	myfree(SRAMIN,buf);
 	return rval;//无错误.			 
 } 
 //初始化字体
